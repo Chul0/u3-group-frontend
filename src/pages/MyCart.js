@@ -16,6 +16,7 @@ const MyCart = (props) => {
             })
             console.log(response);
             setSavedProducts(response.data)
+            
         } catch (error) {
             console.log({error});
         }
@@ -38,15 +39,28 @@ const MyCart = (props) => {
 
     useEffect(fetchSavedProducts,[shouldReload])
 
+    
+   const calculator = () => {
+    let c = 0
+    for(let i=0; i < savedProducts.length; i++){
+        let newString = savedProducts[i].price.replace('$', '')
+        let noDollar = parseFloat(newString)
+        // console.log(noDollar);
+        c += noDollar
+    }
+    return c
+   }
+
+
     return(
         <div className="container">
             <h1 className="header">My Cart</h1>
 
             {
                 savedProducts.length > 0 ?
-                savedProducts.map((product)=>{
+                savedProducts.map((product, i)=>{
                     // console.log(image.id);
-                    return <div key={product.id}>
+                    return <div key={i}>
                         <p>{product.name}</p>
                         <img src={product.image} />
                         <p>{product.price}</p>
@@ -59,6 +73,9 @@ const MyCart = (props) => {
                     Your cart is empty
                 </p>
             }
+            <p>Total price:{calculator()}</p>
+            <button>Check out</button>
+            
         </div>
     )
 }
