@@ -18,16 +18,35 @@ const ProductDetail = (props) => {
     }
     useEffect(fetchProductDetail, [])
 
+    const saveToMyCart =(e) =>{
+       axios.post(`${process.env.REACT_APP_BACKEND_URL}/products/${id}`,
+       {},
+       {
+           headers:{
+               Authorization: localStorage.getItem('userId')
+           }
+       })
+       .then((response)=>{
+           console.log('you clicked save');
+           console.log(response);
+       })
+   }
+
     return(
         <div className="productDetail-container"> 
         {
             productDetail ?
+            <>
              <div key={productDetail.id}>
                     <h3>{productDetail.name}</h3>
                     <img src={productDetail.image} />
                     <p>{productDetail.description}</p>
                     <p>{productDetail.price}</p>
             </div>
+            
+            <button onClick={saveToMyCart}>ADD TO MY CART</button>
+            <Link to="/allproducts">GO BACK</Link>
+            </>
             //No need to map an object!, but if an object is nested in an array, it should be mapped through!
             
             :
