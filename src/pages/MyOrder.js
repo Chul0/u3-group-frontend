@@ -1,7 +1,7 @@
 const MyOrder = (props) => {
     return(
-        <div>
-            Hi from MyOrder
+        <div className="container">
+            <h1 className="header">My Orders</h1>
         </div>
     )
 }

@@ -19,9 +19,10 @@ const MyCart = (props) => {
             
         } catch (error) {
             console.log({error});
-        }  
+        }
     }
     useEffect(fetchSavedProducts,[])
+
 
     const removeFromCart = async (productId) => {
         try {
@@ -52,7 +53,9 @@ const MyCart = (props) => {
 
 
     return(
-        <div>
+        <div className="container">
+            <h1 className="header">My Cart</h1>
+
             {
                 savedProducts.length > 0 ?
                 savedProducts.map((product, i)=>{
@@ -61,9 +64,9 @@ const MyCart = (props) => {
                         <p>{product.name}</p>
                         <img src={product.image} />
                         <p>{product.price}</p>
-                        <button onClick={()=> removeFromCart(product.id)} >Remove from my cart</button>    
+                        <button onClick={()=> removeFromCart(product.id)} >Remove from my cart</button>
                         </div>
-                        
+
                 })
                 :
                 <p>
