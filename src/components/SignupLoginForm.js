@@ -1,0 +1,46 @@
+import axios from 'axios'
+import { useState, useContext } from 'react'
+import { UserContext } from '../contexts/UserContext'
+
+
+const SignupLoginForm = (props) => {
+    const [email, setEmail] = useState('')
+    const [password, setPassword] = useState('')
+
+    const [user, setUser] = useContext(UserContext)
+
+    const handleSubmit = (e) => {
+        e.preventDefault()
+        axios.post(`${process.env.REACT_APP_BACKEND_URL}${props.route}`, {
+            email, 
+            password
+        })
+        .then((response) => {
+            // console.log(response);
+            console.log(`${props.log}`);
+            localStorage.setItem('userId', response.data.userId)
+            window.location.reload()
+        })
+    }
+
+
+    return (
+        <div className="SingupLoginForm-container">
+        <h1>{props.title}</h1>
+        <form onSubmit={handleSubmit}>
+           
+            <label htmlFor="new-email"><h2>EMAIL</h2></label>
+            <input value={email} onChange={(e)=> {setEmail(e.target.value) }} />
+
+            <label htmlFor="new-password"><h2>PASSWORD</h2></label>
+            <input type="password" value={password} onChange={(e)=> {setPassword(e.target.value) }} />
+            <input id="submit-button" type="submit" value={props.buttonText} />
+            
+        </form>
+        </div>
+    )
+}
+
+
+
+export default SignupLoginForm
