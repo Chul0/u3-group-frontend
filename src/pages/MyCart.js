@@ -72,6 +72,7 @@ const MyCart = (props) => {
             }
             <p>Total price:{calculator()}</p>
             <button>Check out</button>
+            
         </div>
     )
 }
