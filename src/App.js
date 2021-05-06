@@ -12,7 +12,7 @@ import AllProducts from './pages/AllProducts'
 import Login from './pages/Login'
 import MyCart from './pages/MyCart'
 import MyOrder from './pages/MyOrder'
-import ProductDetail from './pages/ProductDetail'
+import ProductDetail from './components/ProductDetail'
 import Signup from './pages/Signup'
 
 
@@ -89,6 +89,12 @@ function App() {
        }}
       />
 
+      <Route 
+        path="/products/:id"
+        render={()=>{
+          return <ProductDetail />
+        }}
+      />  
 
     </div>
   );
