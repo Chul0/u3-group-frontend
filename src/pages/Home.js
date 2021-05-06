@@ -1,7 +1,7 @@
 const Home = (props) => {
     return(
-        <div>
-            Welcome!! This is HOME!!
+        <div className="container">
+            <h1 className="header">Welcome to Tekky Toi's</h1>
         </div>
     )
 }
