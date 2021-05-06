@@ -92,7 +92,11 @@ function App() {
       <Route 
         path="/products/:id"
         render={()=>{
-          return <ProductDetail />
+          if(user.id){
+            return <ProductDetail />
+          }else{
+            return <Redirect to ="/" />
+          }
         }}
       />  
 
