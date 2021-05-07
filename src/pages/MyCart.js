@@ -1,11 +1,14 @@
 import { useState, useEffect, useContext } from 'react'
 import axios from 'axios'
 import { UserContext } from '../contexts/UserContext'
+import {Redirect} from 'react-router-dom'
 
 const MyCart = (props) => {
     const [user, setUser] =useContext(UserContext)
     const [savedProducts, setSavedProducts] = useState([])
     const [shouldReload, setShouldReload ] = useState(true)
+    const [address, setAddress] = useState('')
+    const [creditCardNum, setCreditCardNum] = useState('')
 
     const fetchSavedProducts= async () =>{
         try {
@@ -14,7 +17,7 @@ const MyCart = (props) => {
                     Authorization: localStorage.getItem('userId')
                 }
             })
-            console.log(response);
+            // console.log(response);
             setSavedProducts(response.data)
             
         } catch (error) {
@@ -51,6 +54,22 @@ const MyCart = (props) => {
     return c
    }
 
+   const handleSubmit = (e) => {
+    e.preventDefault()
+    axios.post(`${process.env.REACT_APP_BACKEND_URL}/order`, {
+        address,
+        creditCardNum
+    },{
+        headers: {
+            Authorization: localStorage.getItem('userId')
+        }
+    })
+    .then((response) => {
+        // console.log(response);
+        setShouldReload(!shouldReload)
+    })
+}
+
 
     return(
         <div className="container">
@@ -73,9 +92,21 @@ const MyCart = (props) => {
                     Your cart is empty
                 </p>
             }
-            <p>Total price:{calculator()}</p>
-            <button>Check out</button>
+            <p>Total price:${calculator()}</p>
+
+            <div className="checkoutForm-container">
+                <form onSubmit={handleSubmit}>
             
+                    <label htmlFor="new-address"><h2>ADDRESS</h2></label>
+                    <input value={address} onChange={(e)=> {setAddress(e.target.value) }} />
+            
+            
+                    <label htmlFor="new-cardNum"><h2>CARD NUMBER</h2></label>
+                    <input value={creditCardNum} onChange={(e)=> {setCreditCardNum(e.target.value) }} />
+
+                    <input id="submit-button" type="submit" value="Check out" />     
+                </form>
+            </div>  
         </div>
     )
 }
