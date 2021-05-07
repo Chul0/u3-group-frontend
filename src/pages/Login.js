@@ -3,6 +3,7 @@ import SignupLoginForm from '../components/SignupLoginForm'
 
 const Login = (props) => {
     return(
+        <div className="outer">
         <div className="loginContainer">
             <h1 className="header">Tekky Toi's</h1>
 
@@ -10,8 +11,9 @@ const Login = (props) => {
         buttonText="LOGIN"
         route="/users/login"
         log="Login Successful"
-        title="LOGIN"
+        title="login"
         />
+        </div>
         </div>
     )
 }
