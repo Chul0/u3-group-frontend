@@ -14,6 +14,7 @@ import MyCart from './pages/MyCart'
 import MyOrder from './pages/MyOrder'
 import ProductDetail from './components/ProductDetail'
 import Signup from './pages/Signup'
+import OrderDetail from './components/OrderDetail';
 
 
 
@@ -99,6 +100,19 @@ function App() {
           }
         }}
       />  
+
+      <Route 
+        path="/order/:id"
+        render={()=>{
+          if(user.id){
+            return <OrderDetail />
+          }else{
+            return <Redirect to ="/" />
+          }
+        }}
+      /> 
+      
+
 
     </div>
   );
