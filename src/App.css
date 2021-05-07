@@ -92,6 +92,7 @@ h1 {
   width: 550px;
   height: 530px;
   border: 1px solid #5ce1e6;
+  margin: 0 auto;
   margin-top: 40px;
   /* background-image: url("./pages/assets/TekkyTois.png"); */
   background-size: cover;
@@ -128,6 +129,8 @@ h1 {
   background-color: red;
   color: white;
   font-family: Roboto;
+  font-stretch: extra-condensed;
+  text-shadow: -1px -1px 1px #000, 1px 1px 1px #ccc;
   border-radius: 90px;
   width: 500px;
   height: 527px;
@@ -137,19 +140,24 @@ h1 {
 
 }
 
+.homeContainer {
+  background-image: url("./pages/assets/TekkyTois.png");
+}
+
 
 a {
   color: #ff1616;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
-.navbar {
-  padding: 30px;
-  font-size: 20px;
-  background-color: #5ce1e6;
-  text-align: center;
-  width: 600px;
+.navv {
   margin: 0 auto;
+  padding: 25px;
+  display: inline-block;
+  font-size: 30px;
+  background-color: #5ce1e6;
+  /* text-align: center; */
+  width: 1200px;
   border-radius: 40px;
 }
 
