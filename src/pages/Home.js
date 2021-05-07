@@ -1,6 +1,6 @@
 const Home = (props) => {
     return(
-        <div className="container">
+        <div className="homeContainer">
             <h1 className="header">Welcome to Tekky Toi's</h1>
         </div>
     )
