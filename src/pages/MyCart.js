@@ -2,6 +2,7 @@ import { useState, useEffect, useContext } from 'react'
 import axios from 'axios'
 import { UserContext } from '../contexts/UserContext'
 import {Redirect} from 'react-router-dom'
+import myCart from '../css/myCart.css'
 
 const MyCart = (props) => {
     const [user, setUser] =useContext(UserContext)
@@ -83,7 +84,7 @@ const MyCart = (props) => {
                     // console.log(image.id);
                     return <div key={i}>
                         <p>{product.name}</p>
-                        <img src={product.image} />
+                        <img className="cartImage" src={product.image} />
                         <p>{product.price}</p>
                         <button onClick={()=> removeFromCart(product.id)} >Remove from my cart</button>
                         </div>
