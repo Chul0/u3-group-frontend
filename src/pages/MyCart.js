@@ -111,7 +111,7 @@ const MyCart = (props) => {
             </div>  
             {
                 redirectToOrder &&
-            <Redirect to="/order"></Redirect>
+            <Redirect to="/myorder"></Redirect>
             }
         </div>
     )
