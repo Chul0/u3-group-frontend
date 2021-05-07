@@ -6,8 +6,9 @@ import { Link, Router } from 'react-router-dom'
 const NavBar = (props) => {
     const [user, setUser] = useContext(UserContext)
     return(
+        <div className="navv">
         <nav>
-        <Link to="/">HOME</Link>{' | '}
+        <Link className="nav" to="/">HOME</Link>{' | '}
 
     {user.id ?
     <>
@@ -34,6 +35,7 @@ const NavBar = (props) => {
     }
 
     </nav>
+    </div>
     )
 }
 
