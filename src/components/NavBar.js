@@ -11,27 +11,28 @@ const NavBar = (props) => {
 
     {user.id ?
     <>
-        <Link to="/allproducts">ALL PRODUCTS</Link>{' | '}
-        <Link to="/mycart">MY CART</Link>{' | '}
-        <Link to="/myorder">MY ORDER</Link>{' | '}
-        <Link to="/" 
+    <div className="navbar">
+        <Link className="nav" to="/allproducts">ALL PRODUCTS</Link>{' | '}
+        <Link className="nav" to="/mycart">MY CART</Link>{' | '}
+        <Link className="nav" to="/myorder">MY ORDER</Link>{' | '}
+        <Link className="nav" to="/"
             onClick={() => {
                 localStorage.removeItem('userId')
-                setUser('') 
+                setUser('')
             }}
         >SIGNOUT</Link>
-        
-        
+
+    </div>
     </>
 
     :
 
-    <>    
+    <>
         <Link to="/signup">SIGNUP</Link>{' | '}
         <Link to="/login">LOGIN</Link>
-    </>    
+    </>
     }
-    
+
     </nav>
     )
 }

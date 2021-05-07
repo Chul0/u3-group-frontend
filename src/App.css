@@ -1,5 +1,68 @@
 body {
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-image: url("./pages/assets/TekkyTois.png");
+  background-color: #cccccc;
+  background-repeat: no-repeat;
+  background-size: contain;
+
+
+}
+.button {
+  display: block;
+  border-radius: 30px;
+  background-color: #5ce1e6;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 28px;
+  padding: 10px;
+  width: 200px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 0 auto;
+  margin-top: 20px;
+
+  align-items: center;
+  justify-content: center;
+}
+
+.button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.button span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.button:hover span {
+  padding-right: 25px;
+}
+
+.button:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+button:hover::before {
+  opacity: 1;
+	transform: scale(1, 1);
+}
+
+button:hover::after {
+  opacity: 0;
+	transform: scale(0.1, 1);
 }
 
 .container {
@@ -13,12 +76,41 @@ h1 {
   text-align: center;
   font-size: 85px;
   margin: 40px;
-  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-family: Roboto;
+  font-variant-caps: titling-caps;
   color: #000000;
 
 }
 
+.loginContainer,
+.signUpContainer,
+.homeContainer {
+  background-color: red;
+  color: white;
+  font-family: Roboto
+
+}
+
+a {
+  color: #ff1616;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.navbar {
+  padding: 30px;
+  font-size: 20px;
+  background-color: #5ce1e6;
+  text-align: center;
+}
+
 .nav {
+  color: #cb6ce6;
+}
 
-
+.loginInput,
+.signupInput {
+  padding: 20px;
+  margin: 5px;
+  height: 150px;
+  width: 250px
 }
