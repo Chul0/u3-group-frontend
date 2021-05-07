@@ -37,15 +37,17 @@ const ProductDetail = (props) => {
         {
             productDetail ?
             <>
-             <div key={productDetail.id}>
-                    <h3>{productDetail.name}</h3>
-                    <img src={productDetail.image} />
+             <div className="productDetails" key={productDetail.id}>
+                    <h3 className="ProductT">{productDetail.name}</h3>
+                    <img className="ProductImages" src={productDetail.image} />
+                    <div className="ProductDesc-Box" >
                     <p>{productDetail.description}</p>
+                    </div>
                     <p>{productDetail.price}</p>
             </div>
             
-            <button onClick={saveToMyCart}>ADD TO MY CART</button>
-            <Link to="/allproducts">GO BACK</Link>
+            <button className="AddtoCart" onClick={saveToMyCart}>ADD TO MY CART</button>
+            <Link to="/allproducts" className="goBack">GO BACK</Link>
             </>
             //No need to map an object!, but if an object is nested in an array, it should be mapped through!
             

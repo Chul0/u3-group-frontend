@@ -16,8 +16,9 @@ const ProductList = (props) => {
 
 
     return(
+        <div className="allProducts-Box">
+            <h2>All Products</h2>
         <div className="allProducts-container">
-        
         {
             allProducts.length ?
             allProducts.map((product) => {
@@ -25,10 +26,12 @@ const ProductList = (props) => {
                             className="allProducts">
                             <Link to={`/products/${product.id}`}>
                                 <div className="singleProduct-container">
-                                    <h3 >{product.name}</h3>
-                                    <img src={product.image} />
-                                    <p>{product.description}</p>
-                                    <p>{product.price}</p>
+                                    <h3 className="ProductT">{product.name}</h3>
+                                    <img className="ProductImages" src={product.image} />
+                                    <div className="ProductDesc-Box">
+                                    <p className="ProductT">{product.description}</p>
+                                    </div>
+                                    <p className="ProductT">{product.price}</p>
                                 </div>
                             </Link>
                         </div>
@@ -36,6 +39,7 @@ const ProductList = (props) => {
               :
               <p>Loading...</p>
           }
+      </div>
       </div>
     )
 }

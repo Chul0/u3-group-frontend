@@ -1,0 +1,102 @@
+
+.allProducts{
+    border: solid 4px black;
+    margin: 10px;
+    background-color: rgb(89, 136, 155);
+    transition: background 0.5s ease-in-out;
+}
+.allProducts:hover{
+    background-color: skyblue;
+}
+
+.allProducts-Box{
+    display: flex;
+    flex-direction: column;
+    border: solid 10px black;
+    border-radius: 10px;
+    margin-top: 25px;
+    background-image: linear-gradient(to right, orange, red);
+}
+
+.allProducts-container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    width: 1600px;
+}
+
+.singleProduct-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 500px;
+    height: 700px;
+}
+
+.ProductImages{
+    width: 200px;
+    height: 200px;
+}
+
+.ProductDesc-Box{
+    width: 200px;
+    
+}
+
+.ProductT{
+        font-size: 15px;
+        text-decoration: none;
+        color: black;
+}
+.productDetail-container{
+    display: flex;
+    flex-direction: column;
+    border: solid 10px black;
+    border-radius: 10px;
+    margin-top: 25px;
+    padding: 20px;
+    background-color: skyblue;
+}
+
+.productDetails{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.AddtoCart{
+    background-color: white;
+    transition: background 0.5s ease-in-out;
+}
+
+.AddtoCart:hover{
+    background-color: rgb(253, 76, 76);
+}
+
+.goBack{
+    color: black;
+}
+
+.goBack:hover{
+    color: red;
+}
+
+a:link{
+    text-decoration: none;
+   
+}
+
+a:visited{
+    text-decoration: none;
+}
+
+a:hover{
+    text-decoration: none;
+}
+
+a:active{
+    text-decoration: none;
+}
