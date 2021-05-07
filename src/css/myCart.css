@@ -1,0 +1,14 @@
+.container{
+    border: 5px solid black;
+    border-radius: 5px;
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: lightgrey;
+}
+.cartImage{
+    width: 200px;
+    height: 200px;
+}

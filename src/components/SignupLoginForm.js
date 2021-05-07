@@ -12,7 +12,7 @@ const SignupLoginForm = (props) => {
     const handleSubmit = (e) => {
         e.preventDefault()
         axios.post(`${process.env.REACT_APP_BACKEND_URL}${props.route}`, {
-            email, 
+            email,
             password
         })
         .then((response) => {
@@ -28,14 +28,15 @@ const SignupLoginForm = (props) => {
         <div className="SingupLoginForm-container">
         <h1>{props.title}</h1>
         <form onSubmit={handleSubmit}>
-           
-            <label htmlFor="new-email"><h2>EMAIL</h2></label>
+
+            <label htmlFor="new-email"><h2>email</h2></label>
             <input value={email} onChange={(e)=> {setEmail(e.target.value) }} />
 
-            <label htmlFor="new-password"><h2>PASSWORD</h2></label>
+            <label htmlFor="new-password"><h2>password</h2></label>
             <input type="password" value={password} onChange={(e)=> {setPassword(e.target.value) }} />
-            <input id="submit-button" type="submit" value={props.buttonText} />
-            
+
+            <button className="button" id="submit-button" type="submit" value={props.buttonText}><span>submit</span></button>
+
         </form>
         </div>
     )
