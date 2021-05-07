@@ -9,6 +9,7 @@ const MyCart = (props) => {
     const [shouldReload, setShouldReload ] = useState(true)
     const [address, setAddress] = useState('')
     const [creditCardNum, setCreditCardNum] = useState('')
+    const [redirectToOrder, setRedirectToOrder] = useState(false)
 
     const fetchSavedProducts= async () =>{
         try {
@@ -67,6 +68,7 @@ const MyCart = (props) => {
     .then((response) => {
         // console.log(response);
         setShouldReload(!shouldReload)
+        setRedirectToOrder(true)
     })
 }
 
@@ -107,6 +109,10 @@ const MyCart = (props) => {
                     <input id="submit-button" type="submit" value="Check out" />     
                 </form>
             </div>  
+            {
+                redirectToOrder &&
+            <Redirect to="/order"></Redirect>
+            }
         </div>
     )
 }

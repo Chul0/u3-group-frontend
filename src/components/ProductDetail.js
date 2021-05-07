@@ -27,8 +27,8 @@ const ProductDetail = (props) => {
            }
        })
        .then((response)=>{
-           console.log('you clicked save');
-           console.log(response);
+        //    console.log('you clicked save');
+        //    console.log(response);
        })
    }
 
