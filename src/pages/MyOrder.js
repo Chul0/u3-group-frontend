@@ -2,6 +2,7 @@ import { useState, useEffect, useContext } from 'react'
 import axios from 'axios'
 import { UserContext } from '../contexts/UserContext'
 import { Link} from 'react-router-dom'
+import myOrder from '../css/myOrder.css'
 
 
 const MyOrder = (props) => {
@@ -25,23 +26,26 @@ const MyOrder = (props) => {
     useEffect(fetchOrders,[])
 
     return(
+        <div className="singleOrder-Box">
+            <h2>My Orders</h2>
         <div className="singleOrder-container">
             {
                 orders.length > 0 ?
                 orders.map((order)=>{
-                    return <div key={order.id}>
+                    return <div className="order" key={order.id}>
                         <Link to={`/order/${order.id}`}>
-                        <p>{order.createdAt}</p>
+                        <p className="orderT">{order.createdAt}</p>
                         </Link>
                         </div>
 
                 })
                 :
                 <p>
-                    Your have no order history
+                    You have no order history
                 </p>
             }
         </div>
+       </div>
     )
 }
 

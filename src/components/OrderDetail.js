@@ -5,6 +5,7 @@ import axios from 'axios'
 import { Link, Redirect } from 'react-router-dom'
 
 
+
 const OrderDetail = (props) => {
     const { id } = useParams()
     const [user, setUser] =useContext(UserContext)
@@ -38,7 +39,7 @@ const OrderDetail = (props) => {
 
 
     return(
-        <div>
+        <div className="specificOrder">
             <div>
 
             {
@@ -60,9 +61,9 @@ const OrderDetail = (props) => {
                 {
                     orderDetail.product && orderDetail.order && 
                     <>
-                    <p>Total price:${calculator()}</p> 
-                    <p>Address:{orderDetail.order.address}</p> 
-                    <p>Credit Cart Number:{orderDetail.order.creditCardNum}</p> 
+                    <p>Total price: ${calculator()}</p> 
+                    <p>Address: {orderDetail.order.address}</p> 
+                    <p>Credit Cart Number: {orderDetail.order.creditCardNum}</p> 
                     </>
                 }
             </div>
