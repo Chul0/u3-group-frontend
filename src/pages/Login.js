@@ -3,9 +3,10 @@ import SignupLoginForm from '../components/SignupLoginForm'
 
 const Login = (props) => {
     return(
+        <div className="bigBack">
         <div className="outer">
         <div className="loginContainer">
-            <h1 className="header">Tekky Toi's</h1>
+            {/* <h1 className="header">Tekky Toi's</h1> */}
 
         <SignupLoginForm className="loginInput"
         buttonText="LOGIN"
@@ -13,6 +14,7 @@ const Login = (props) => {
         log="Login Successful"
         title="login"
         />
+        </div>
         </div>
         </div>
     )

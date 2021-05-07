@@ -85,6 +85,14 @@ h1 {
 
 }
 
+.bigBack {
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+  margin-top: 60px;
+  background-size: cover;
+}
+
 
 .outer {
   border-radius: 90px;
@@ -92,7 +100,7 @@ h1 {
   height: 530px;
   border: 1px solid #5ce1e6;
   margin: 0 auto;
-  margin-top: 40px;
+  margin-top: 0px;
   /* background-image: url("./pages/assets/TekkyTois.png"); */
   background-size: cover;
   background: linear-gradient(303deg, #4b2828, #ff0a0a);
