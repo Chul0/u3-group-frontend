@@ -3,15 +3,17 @@ import SignupLoginForm from '../components/SignupLoginForm'
 
 const Login = (props) => {
     return(
-        <div className="container">
-            <h1 className="header">Login</h1>
+        <div className="outer">
+        <div className="loginContainer">
+            <h1 className="header">Tekky Toi's</h1>
 
-        <SignupLoginForm
+        <SignupLoginForm className="loginInput"
         buttonText="LOGIN"
         route="/users/login"
         log="Login Successful"
-        title="LOGIN"
+        title="login"
         />
+        </div>
         </div>
     )
 }
