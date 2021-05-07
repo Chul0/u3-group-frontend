@@ -31,7 +31,7 @@ const MyCart = (props) => {
                     Authorization: localStorage.getItem('userId')
                 }
             })
-            setShouldReload(false)
+            setShouldReload(!shouldReload)
         } catch (error) {
             console.log({error});
         }
