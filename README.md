@@ -38,7 +38,29 @@
 * GET '/:id', get one product
 
 
+## Wireframes
+<details>
+<summary>Click to see wireframes</summary>
 
+![1](./images/TekkyWireframe.png)
+
+</details>
+
+## ERD
+<details>
+<summary>Click to see ERD</summary>
+
+![1](./images/ERD.png)
+
+</details>
+
+## Routes Planner
+<details>
+<summary>Click to see Routes Planner</summary>
+
+![1](./images/TekkyRoutesPlanner.png)
+
+</details>
 
 ## MVP
 
